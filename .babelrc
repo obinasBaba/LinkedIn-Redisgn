@@ -4,11 +4,14 @@
       "next/babel",
       {
         "preset-react": {
-          "runtime": "automatic",
-          "importSource": "@emotion/react"
+          "runtime": "automatic"
         }
       }
     ]
   ],
-  "plugins": ["@emotion"]
+  "plugins": [
+    [
+      "babel-plugin-styled-components"
+    ]
+  ]
 }

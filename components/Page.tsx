@@ -1,22 +1,27 @@
 import Head from "next/head";
 import React from "react";
-import WithDefaultGlobalStyles from "./WithDefaultGlobalStyles";
+import styled from "styled-components";
 
 type PageProps = {
-  title: string;
-  description: string;
+    title: string;
+    description: string;
 };
-const Page: React.FC<PageProps> = ({ title, description, children }) => {
-  return (
-    <WithDefaultGlobalStyles>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {children}
-    </WithDefaultGlobalStyles>
-  );
+
+const PageContainer = styled.div`
+  background: yellowgreen; 
+  //font-family: Inconsolata,serif;
+`
+const Page: React.FC<PageProps> = ({title, description, children}) => {
+    return (
+        <PageContainer>
+            <Head>
+                <title>{title}</title>
+                <meta name="description" content={description}/>
+                <link rel="icon" href="/favicon.ico"/>
+            </Head>
+            {children}
+        </PageContainer>
+    );
 };
 
 export default Page;

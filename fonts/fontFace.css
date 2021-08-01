@@ -1,0 +1,123 @@
+
+
+@font-face {
+    font-family: 'Poppins Thin';
+    src: local('Poppins Thin'), local('PoppinsThin'),
+    url('../../my-gatsby-portfolio/src/assets/fonts/Poppins/poppins-v15-latin-100.woff2') format('woff2'),
+    url('../../my-gatsby-portfolio/src/assets/fonts/Poppins/poppins-v15-latin-100.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins Black';
+    src: local('Poppins Black'), local('PoppinsBlack'),
+    url('../../my-gatsby-portfolio/src/assets/fonts/Poppins/poppins-v15-latin-900.woff2') format('woff2'),
+    url('../../my-gatsby-portfolio/src/assets/fonts/Poppins/poppins-v15-latin-900.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sofia Pro';
+    src: local('Sofia Pro Bold'), local('SofiaProBold'),
+    url('../../my-gatsby-portfolio/src/assets/fonts/SofiaPro/Sofia-Pro - Bold.woff2') format('woff2'),
+    url('../../my-gatsby-portfolio/src/assets/fonts/SofiaPro/Sofia-Pro - Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sofia Pro';
+    src: local('Sofia Pro Semi-Bold'), local('SofiaProSemiBold'),
+    url('../../my-gatsby-portfolio/src/assets/fonts/SofiaPro/Sofia-Pro - SemiBold.woff2') format('woff2'),
+    url('../../my-gatsby-portfolio/src/assets/fonts/SofiaPro/Sofia-Pro - SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sofia Pro';
+    src: local('Sofia Pro Regular'), local('SofiaProRegular'),
+    url('./SofiaPro/Sofia-Pro - Regular.woff2') format('woff2'),
+    url('./SofiaPro/Sofia-Pro - Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sofia Pro';
+    src: local('Sofia Pro Light'), local('SofiaProLight'),
+    url('./SofiaPro/Sofia-Pro - Light.woff2') format('woff2'),
+    url('./SofiaPro/Sofia-Pro - Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Gramatika';
+    src: local('Gramatika Black'), local('Gramatika-Black'),
+    url('./Gramatika/Gramatika - Black.woff2') format('woff2'),
+    url('./Gramatika/Gramatika - Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gramatika';
+    src: local('Gramatika Bold'), local('Gramatika-Bold'),
+    url('./Gramatika/Gramatika - Bold.woff2') format('woff2'),
+    url('./Gramatika/Gramatika - Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gramatika';
+    src: local('Gramatika Regular'), local('Gramatika-Regular'),
+    url('./Gramatika/Gramatika - Regular.woff2') format('woff2'),
+    url('./Gramatika/Gramatika - Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Sofia Pro Soft';
+    src: local('Sofia Pro Soft Bold'), local('SofiaProSoftBold'),
+    url('./SofiaProSoft/Sofia-Pro-Soft - Bold.woff2') format('woff2'),
+    url('./SofiaProSoft/Sofia-Pro-Soft - Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sofia Pro Soft';
+    src: local('Sofia Pro Soft Regular'), local('SofiaProSoftRegular'),
+    url('./SofiaProSoft/Sofia-Pro-Soft - Regular.woff2') format('woff2'),
+    url('./SofiaProSoft/Sofia-Pro-Soft - Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sofia Pro Soft';
+    src: local('Sofia Pro Soft Light'), local('SofiaProSoftLight'),
+    url('./SofiaProSoft/Sofia-Pro-Soft - Light.woff2') format('woff2'),
+    url('./SofiaProSoft/Sofia-Pro-Soft - Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
