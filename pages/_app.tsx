@@ -1,10 +1,11 @@
 import {AppProps} from "next/app";
 import {ThemeProvider} from "styled-components";
 import theme from '../styles/theme'
-import {CssBaseline, MuiThemeProvider} from "@material-ui/core";
 import '../fonts/fontFace.css'
 import {GlobalStyle} from "../styles/GlobalStyles";
 import Layout from "../components/layout";
+import {ChakraProvider} from '@chakra-ui/react'
+import AppStateProvider from '../contexts/AppStateContext'
 
 
 const CustomApp = ({Component, pageProps}: AppProps) => {
@@ -12,16 +13,24 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
     return (
         // <StylesProvider injectFirst>
 
-        <MuiThemeProvider theme={theme}>
+        // <MuiThemeProvider theme={theme}>
+        <AppStateProvider>
 
-            <ThemeProvider theme={theme}>
-                <CssBaseline/>
-                <GlobalStyle/>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
-            </ThemeProvider>
-        </MuiThemeProvider>
+            <ChakraProvider>
+
+                <ThemeProvider theme={theme}>
+
+                    <GlobalStyle/>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </ThemeProvider>
+            </ChakraProvider>
+
+        </AppStateProvider>
+
+
+        // </MuiThemeProvider>
         // </StylesProvider>
 
     );

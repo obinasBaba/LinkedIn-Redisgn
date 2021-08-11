@@ -44,6 +44,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
 
     //overflow-x: hidden;
+    background-color: #f5f5f5;
 
     &.locked {
       overflow: hidden;

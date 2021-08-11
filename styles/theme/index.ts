@@ -1,4 +1,5 @@
-import { createTheme, responsiveFontSizes } from '@material-ui/core'
+
+function createTheme(obj: any){}
 
 let theme = createTheme({
   breakpoints: {
@@ -38,6 +39,4 @@ let theme = createTheme({
   },
 })
 
-export default responsiveFontSizes(theme, {
-  breakpoints: ['sm', 'md', 'lg', 'xl'],
-})
+export default {}

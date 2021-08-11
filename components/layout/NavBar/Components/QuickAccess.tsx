@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from "styled-components";
-import {Avatar, IconButton} from "@material-ui/core";
-import {MessageOutlined, Notifications, NotificationsOutlined} from "@material-ui/icons";
+import {
+    Avatar, Button, IconButton, Popover, PopoverArrow, PopoverBody, PopoverCloseButton,
+    PopoverContent, PopoverHeader, PopoverTrigger
+} from "@chakra-ui/react";
+import {EmailIcon, PhoneIcon} from "@chakra-ui/icons";
+import {Portal} from "next/dist/client/portal";
+import NotficationPopup from './NotificationPopup/NotficationPopup'
+import MessagePopup from './MessagePopup/MessagePopup'
 
 const AccessContianer = styled.div`
   display: flex;
-  gap: .3rem;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
 `
@@ -13,15 +19,18 @@ const AccessContianer = styled.div`
 const QuickAccess = () => {
     return (
         <AccessContianer>
-            <IconButton size='small' >
-                <MessageOutlined fontSize='small'/>
-            </IconButton>
 
-            <IconButton size='small'>
-                <NotificationsOutlined fontSize='small'/>
-            </IconButton>
 
-            <Avatar>M</Avatar>
+            <MessagePopup/>
+
+            <NotficationPopup/>
+
+
+            <Avatar
+                size="xs"
+                name="Kola Tioluwani"
+                src="https://bit.ly/tioluwani-kolawole"
+            />
 
 
         </AccessContianer>
