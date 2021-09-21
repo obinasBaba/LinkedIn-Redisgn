@@ -12,22 +12,36 @@ const Footer = styled.footer`
   margin-top: 3rem;
 `
 
+const Main = styled.main`
+    flex: 1;
+`
 
-const Layout: React.FC = ({children}) => {
+const LayoutContainer = styled.div`
+    display: flex;
+  min-height: 100vh;
+  flex-flow: column;
+`
+
+interface LayoutProps {
+
+}
+
+const Layout: React.FC<LayoutProps> = ({children
+                                          }) => {
     return (
-        <>
+        <LayoutContainer>
 
             <NavBar/>
 
-            <main>
+            <Main>
                 {children}
-            </main>
+            </Main>
 
             <Footer>
                 <h1>Footer</h1>
             </Footer>
 
-        </>
+        </LayoutContainer>
     );
 };
 

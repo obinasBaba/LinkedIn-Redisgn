@@ -1,12 +1,12 @@
 import React from 'react';
-import {Box, Container, Flex, Text} from "@chakra-ui/react";
+import {Container} from "@chakra-ui/react";
 import {useRouter} from "next/router";
 import styled from "styled-components";
-import NavigationBar from './NavigationBar'
-import {heightWidth, spacing} from "../../styles/mixins";
-import SearchResultSlot from './components/SearchResultSlot'
+import NavigationBar from '../../components/TabNavigationBar'
+import {spacing} from "../../styles/mixins";
 import MainContent from "./components/MainContent";
 import Aside from "./components/Aside";
+import Layout from "../../components/layout";
 
 const SearchPageContainer = styled.section`
   display: flex;
@@ -16,11 +16,6 @@ const SearchPageContainer = styled.section`
   ${spacing('gap', 2)};
 `
 
-
-const Main = styled.main`
-  flex: .75;
-  //border: thin solid blue;
-`
 
 const Search = () => {
 
@@ -43,5 +38,16 @@ const Search = () => {
         </SearchPageContainer>
     );
 };
+
+Search.getLayout = (page) => (
+    <Layout innerNav={{
+        isVisible: true,
+        Links: [
+
+        ]
+    }} >
+        {page}
+    </Layout>
+)
 
 export default Search;

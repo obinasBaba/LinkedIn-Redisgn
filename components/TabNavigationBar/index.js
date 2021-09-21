@@ -1,9 +1,8 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
 import styled from "styled-components";
-import {heightWidth, spacing, text} from "../../../styles/mixins";
-import {Text} from "@chakra-ui/react";
+import {heightWidth, spacing, text} from "../../styles/mixins";
 import {AnimateSharedLayout, motion} from "framer-motion";
-import {AppStateContext} from "../../../contexts/AppStateContext";
+import {AppStateContext} from "../../contexts/AppStateContext";
 
 
 const NavigationBarContainer = styled(motion.ul)`
@@ -17,12 +16,12 @@ const NavigationBarContainer = styled(motion.ul)`
   align-items: center;
   position: sticky;
   z-index: 1;
-  top: ${({top}) => `${top}px`};
+  top: ${({top}) => `${top - 1}px`};
 
   ${heightWidth('gap', 1)};
 `
 
-const LinkItem = styled( motion.li )`
+const LinkItem = styled(motion.li)`
   padding: 0;
   margin: 0;
   //border: thin solid red;
@@ -35,12 +34,12 @@ const LinkItem = styled( motion.li )`
   .link-txt {
     margin: auto;
     color: gray;
-    
+
     ${spacing('pv', 1.5)};
     ${spacing('ph', 1.5)};
     ${text(.9)};
-    
-    &.active{
+
+    &.active {
       font-weight: 600;
       color: black;
     }
@@ -64,11 +63,13 @@ const spring = {
     damping: 30
 };
 
-const NavigationBar = () => {
+const TabNavigationBar = ({
+                              links =
+                                  ['All', 'People', 'Companies', 'Groups', 'Jobs', 'More']
+                          }) => {
 
-    const navLink = ['All', 'People', 'Companies', 'Groups', 'Jobs', 'More'];
     const [selected, setSelected] = useState(0);
-    const innerNavRef = useRef(null );
+    const innerNavRef = useRef(null);
 
     const {
         navBarHeight,
@@ -77,12 +78,11 @@ const NavigationBar = () => {
 
     useEffect(() => {
 
-        if (innerNavRef.current){
-            let height = innerNavRef.current.getBoundingClientRect().bottom;
-            setInnerNavBarHeight(height)
-        }
+        let height = innerNavRef.current.getBoundingClientRect().bottom;
+        setInnerNavBarHeight(height)
 
-        return () => {};
+        return () => {
+        };
 
     }, []);
 
@@ -91,20 +91,11 @@ const NavigationBar = () => {
         <AnimateSharedLayout type='crossfade'>
 
             <NavigationBarContainer layout top={navBarHeight} ref={innerNavRef}>
-
                 {
-                    navLink.map((linkTxt, index) =>
-                        <LinkItem layout onClick={() => {
-                            setSelected(index)
-                        }}
-                        >
-
+                    links.map((linkTxt, index) =>
+                        <LinkItem layout onClick={() => setSelected(index)}>
                             <motion.p layout
-                                  className={`link-txt ${index === selected && 'active'}`}
-                            >
-                                {linkTxt}
-                            </motion.p>
-
+                                      className={`link-txt ${index === selected && 'active'}`}>{linkTxt}</motion.p>
                             {
                                 index === selected &&
                                 <motion.div
@@ -129,4 +120,4 @@ const NavigationBar = () => {
     );
 };
 
-export default NavigationBar;
+export default TabNavigationBar;

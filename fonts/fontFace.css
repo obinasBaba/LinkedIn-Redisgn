@@ -1,14 +1,14 @@
 
 
-@font-face {
+/*@font-face {
     font-family: 'Poppins Thin';
     src: local('Poppins Thin'), local('PoppinsThin'),
-    url('../../my-gatsby-portfolio/src/assets/fonts/Poppins/poppins-v15-latin-100.woff2') format('woff2'),
+    url('../../my-gatsby-portfolio/src/assets/fonts/Poppins/pop') format('woff2'),
     url('../../my-gatsby-portfolio/src/assets/fonts/Poppins/poppins-v15-latin-100.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
-}
+}*/
 
 @font-face {
     font-family: 'Poppins Black';

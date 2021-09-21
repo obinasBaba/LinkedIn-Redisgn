@@ -3,12 +3,18 @@ import {ThemeProvider} from "styled-components";
 import theme from '../styles/theme'
 import '../fonts/fontFace.css'
 import {GlobalStyle} from "../styles/GlobalStyles";
-import Layout from "../components/layout";
 import {ChakraProvider} from '@chakra-ui/react'
 import AppStateProvider from '../contexts/AppStateContext'
+import Layout from "../components/layout";
 
 
-const CustomApp = ({Component, pageProps}: AppProps) => {
+const CustomApp = ({Component, pageProps}) => {
+
+    const ChildComp = Component.getLayout || (<Layout>
+            <Component {...pageProps} />
+        </Layout>
+    )
+    // return Layout((<Component {...pageProps}/>));
 
     return (
         // <StylesProvider injectFirst>
@@ -21,9 +27,18 @@ const CustomApp = ({Component, pageProps}: AppProps) => {
                 <ThemeProvider theme={theme}>
 
                     <GlobalStyle/>
-                    <Layout>
-                        <Component {...pageProps} />
-                    </Layout>
+                    {/*<Layout>*/}
+                    {/*    <Layout />*/}
+                    {
+                        ChildComp instanceof Function ?
+                            ChildComp((<Component {...pageProps}/>))
+                            :
+                            <Layout>
+                                <Component {...pageProps} />
+                            </Layout>
+
+                    }
+                    {/*</Layout>*/}
                 </ThemeProvider>
             </ChakraProvider>
 

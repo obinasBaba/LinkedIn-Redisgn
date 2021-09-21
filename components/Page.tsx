@@ -8,8 +8,10 @@ type PageProps = {
 };
 
 const PageContainer = styled.div`
-  background: yellowgreen; 
+  //background: yellowgreen; 
   //font-family: Inconsolata,serif;
+  
+  color: black;
 `
 const Page: React.FC<PageProps> = ({title, description, children}) => {
     return (
